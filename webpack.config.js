@@ -12,7 +12,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve:{
-    extensions:['.js','.jsx']
+    extensions:['.js','.jsx','.css']
   },
   devServer: {
     static: './dist',
@@ -30,7 +30,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test:/\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader','css-loader'],
       }
-    ]
+    ],
+
   }
 };
