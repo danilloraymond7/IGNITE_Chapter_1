@@ -1,4 +1,5 @@
 import  '../src/styles/global.scss'
+import { RepositoryList } from './compoments/Repositorio'
 export function App() {
- return <h2>Teste 1</h2>
+ return <RepositoryList/>
 }
