@@ -1,4 +1,5 @@
-const nameRepository = 'RocketSeat 🚀'
+const nameRepository = 'RocketSeat 🚀';
+
 export function RepositoryList() {
   return (
     <section className="repository-list">
