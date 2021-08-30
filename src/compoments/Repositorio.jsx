@@ -1,17 +1,23 @@
+import { useState,useEffect } from 'react';
 import { RepositoryItem} from './RepositoryItem'
-
-const objRepository = {
-  name:'Unform',
-  description:'Form for React',
-  link:'https://github.com/unform/unform'
-}
+import  '../styles/reporitory.scss';
 
 export function RepositoryList() {
+  const [listRepository,SetlistRepository] = useState([]);
+
+  useEffect(()=>{
+    fetch('https://api.github.com/orgs/rocketseat/repos')
+    .then(response => response.json())
+    .then(data => SetlistRepository(data))
+  },[listRepository])
+
   return (
     <section className="repository-list">
       <h1>Lista de Repositorios</h1>
       <ul>
-        <RepositoryItem nameRepository={objRepository}/>
+        {listRepository.map(repositories =>{
+          return <RepositoryItem key={repositories.name} repositories={repositories}/>
+        })}
       </ul>
     </section>
   )

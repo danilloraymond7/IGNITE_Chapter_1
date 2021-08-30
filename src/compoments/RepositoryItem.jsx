@@ -1,11 +1,10 @@
 export function RepositoryItem(props) {
   return (
     <li>
-      <strong>{props.nameRepository.name}</strong>
-      <p>{props.nameRepository.description}</p>
-      <a
-        href={props.nameRepository.link}> {
-        props.nameRepository.name}
+      <h1>{props.repositories.name}</h1>
+      <p>{props.repositories.description}</p>
+      <a href={props.repositories.html_url}>
+        {props.repositories.name}
       </a>
     </li>
   )
